@@ -1,0 +1,437 @@
+server:
+  port: 8091
+  servlet:
+    context-path: /enterprise
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+tg:
+  upload:
+    #    path: E:\uploadexcel
+    path: /data/em2-enterprise/upload/
+  getFile:
+    path: http://192.168.1.23:8899/enterprise/upload/download/
+  getPicture:
+    path: http://192.168.1.23:8899/file/
+
+em2:
+  config1711:
+    region: 3207
+  security:
+    url: http://127.0.0.1:8082/auth
+    
+sharding :
+  jdbc :
+    datasource :
+      names : enterprise
+      enterprise :
+        minIdle : 10
+        validationQuery : SELECT 1
+        initialSize : 5
+        maxWait : 60000
+        filters : stat
+        poolPreparedStatements : true
+        type : com.alibaba.druid.pool.DruidDataSource
+        url : jdbc:mysql://192.168.1.63:3306/enterprise?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username : root
+        password : loyq@Kw3%G!#)
+        testWhileIdle : true
+        driverClassName : com.mysql.jdbc.Driver
+        maxActive : 30
+    config:
+      sharding:
+        tables:
+          t_user_info:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.t_user_info
+            databaseStrategy:
+              none:
+                any:
+          area:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.area
+            databaseStrategy:
+              none:
+                any:
+          sys_dictionary:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.sys_dictionary
+            databaseStrategy:
+              none:
+                any:
+          enterprise:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.enterprise
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_energy_hour:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_energy_hour
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_energy_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_energy_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_gas_hour:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_gas_hour
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_gas_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_gas_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_power_hour:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_power_hour
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_power_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_power_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_steam_hour:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_steam_hour
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_steam_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_steam_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_water_hour:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_water_hour
+            databaseStrategy:
+              none:
+                any:
+          analysis_company_water_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_company_water_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_terminal_energy_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_terminal_energy_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_terminal_gas_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_terminal_gas_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_terminal_water_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_terminal_water_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_terminal_power_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_terminal_power_month
+            databaseStrategy:
+              none:
+                any:
+          analysis_terminal_steam_month:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.analysis_terminal_steam_month
+            databaseStrategy:
+              none:
+                any:
+          energy_type:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.energy_type
+            databaseStrategy:
+              none:
+                any:
+          energy_saving_project:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.energy_saving_project
+            databaseStrategy:
+              none:
+                any:
+          enterprise_energy_equipment:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.enterprise_energy_equipment
+            databaseStrategy:
+              none:
+                any:
+          metering_instrument:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.metering_instrument
+            databaseStrategy:
+              none:
+                any:
+          metering_type:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.metering_type
+            databaseStrategy:
+              none:
+                any:
+          platform_param:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.platform_param
+            databaseStrategy:
+              none:
+                any:
+          t_device:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.t_device
+            databaseStrategy:
+              none:
+                any:
+          t_energy_expert:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.t_energy_expert
+            databaseStrategy:
+              none:
+                any:
+          upload_item:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.upload_item
+            databaseStrategy:
+              none:
+                any:
+          upload_log:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.upload_log
+            databaseStrategy:
+              none:
+                any:
+          associated_process:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.associated_process
+            databaseStrategy:
+              none:
+                any:
+          collect_data_upload:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.collect_data_upload
+            databaseStrategy:
+              none:
+                any:
+          collect_history:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.collect_history
+            databaseStrategy:
+              none:
+                any:
+          collect_item:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.collect_item
+            databaseStrategy:
+              none:
+                any:
+          collect_item_usage:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.collect_item_usage
+            databaseStrategy:
+              none:
+                any:
+          collect_system_type:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.collect_system_type
+            databaseStrategy:
+              none:
+                any:
+          efficiency_data_target:
+            keyGeneratorColumnName: id
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.efficiency_data_target
+            databaseStrategy:
+              none:
+                any:
+          energy_equipment_contact:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.energy_equipment_contact
+            databaseStrategy:
+              none:
+                any:
+          energy_process_target:
+            keyGeneratorColumnName: id
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.energy_process_target
+            databaseStrategy:
+              none:
+                any:
+          energy_target:
+            keyGeneratorColumnName: id
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.energy_target
+            databaseStrategy:
+              none:
+                any:
+          output_energy_target:
+            keyGeneratorColumnName: id
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.output_energy_target
+            databaseStrategy:
+              none:
+                any:
+          process_code:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.process_code
+            databaseStrategy:
+              none:
+                any:
+          process_code_unit:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.process_code_unit
+            databaseStrategy:
+              none:
+                any:
+          product:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.product
+            databaseStrategy:
+              none:
+                any:
+          product_quota:
+            tableStrategy:
+              none:
+                any:
+            actualDataNodes: enterprise.product_quota
+            databaseStrategy:
+              none:
+                any:
+          work_task_info:
+            actualDataNodes: enterprise.work_task_info
+            databaseStrategy:
+              none:
+                any:
+            tableStrategy:
+              none:
+                any:
+          t_announcement_policies_edit:
+            actualDataNodes: enterprise.t_announcement_policies_edit
+            databaseStrategy:
+              none:
+                any:
+            tableStrategy:
+              none:
+                any:
+          output_energy_warning:
+            actualDataNodes: enterprise.output_energy_warning
+            databaseStrategy:
+              none:
+                any:
+            tableStrategy:
+              none:
+                any:
+        defaultDatabaseStrategy:
+          standard:
+            shardingColumn: getTime
+            preciseAlgorithmClassName: com.tg.enterprise.sharding.PreciseDatabaseShardingAlgorithm
+            rangeAlgorithmClassName: com.tg.enterprise.sharding.RangeDatabaseShardingAlgorithm
+        defaultTableStrategy:
+          none:
+            any:
+        props:
+          sql.show: true
+

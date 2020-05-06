@@ -1,0 +1,65 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /auth
+
+logging:
+  level:
+    org.*: info
+springfox:
+  swagger:
+    host: null
+
+login:
+  imageCodeFlag: false
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.63:3306/enterpriseSH?useUnicode=true&characterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: loyq@Kw3%G!#)
+    druid:
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  redis:
+    host: 192.168.1.63
+    password: Abcd1234!.com
+    port: 6379
+    database: 1
+    lettuce:
+      pool:
+        maxActive: 8
+        maxWait: -1
+        maxIdle: 8
+        minIdle: 0
+  mail:
+    host: mail.cn95598.com
+    port: 25
+    username: system@cn95598.com
+    password: taigu2018
+    protocol: smtp
+    default-encoding: utf-8
+
+tg:
+  sms:
+    timeOut: 3000
+    encode: UTF-8
+    username: tgdl
+    password: 7240835EE7502289C76F5E9BD4CDDB8D
+    apikey: 3a353bc98a1f2da982a1cffaa29bbd46
+  cat:
+    feign:
+      enabled: true
